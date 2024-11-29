@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 
 class Course(models.Model):
@@ -29,5 +30,11 @@ class ClassAndHomeWork(models.Model):
 
     def __str__(self):
         return f"{self.course.name} - {self.mounth.name} - {self.title}"
+    
+
+    def clean(self) -> None:
+        if self.course.name == "Backend":
+            if 'Backend' not in self.mounth.course.name:
+                raise ValidationError("Invalid month for Backend course")
     
 
