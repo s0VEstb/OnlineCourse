@@ -4,8 +4,8 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, Sp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/courses/', include('courses.urls')),
-    path('api/v1/users/', include('users.urls')),
+    path('api/v1/', include('courses.urls')),
+    path('api/v1/', include('users.urls')),
 
     # URL для генерации схемы OpenAPI
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),  # JSON схема
