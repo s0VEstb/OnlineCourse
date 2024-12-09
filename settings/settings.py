@@ -25,11 +25,11 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = ['*', '100.27.228.237', 'localhost', '127.0.0.1']
 
-ALLOWED_HOSTS = ['100.27.228.237', 'localhost', '127.0.0.1']
 
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8080', 'http://100.27.228.237:8080']
+CSRF_TRUSTED_ORIGINS = ['http://100.27.228.237:8080', 'http://localhost:8080']
 
 
 
